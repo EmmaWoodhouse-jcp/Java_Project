@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    namespace：必须有值，自定义的唯一字符串
+    推荐使用：dao 接口的全限定名称
+-->
+<mapper namespace="com.jcp.dao.CirculationDao">
+    <select id="selectCirculation" resultType="Circulation">
+        select serialNo,name,no,year,month,day,type,operator from book_circulation order by serialNo asc
+    </select>
+    <insert id="insertCirculation">
+        insert into book_circulation(name,no,year,month,day,type,operator) value(#{name},#{no},#{year},#{month},#{day},#{type},#{operator})
+    </insert>
+</mapper>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    namespace：必须有值，自定义的唯一字符串
+    推荐使用：dao 接口的全限定名称
+-->
+<mapper namespace="com.jcp.dao.BookDao">
+    <select id="selectBook" resultType="Book">
+        select no,name,author,press,count from book_book order by no asc
+    </select>
+    <insert id="insertBook">
+        insert into book_book value(#{no},#{name},#{author},#{press},#{count})
+    </insert>
+    <delete id="deleteBook" parameterType="java.lang.String">
+        delete from book_book where no=#{no}
+    </delete>
+    <update id="updateBook" parameterType="Book">
+        update book_book set  no=#{no},name=#{name},author=#{author},press=#{press},count=#{count} where no=#{no}
+    </update>
+</mapper>

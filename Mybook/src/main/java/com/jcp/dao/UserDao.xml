@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    namespace：必须有值，自定义的唯一字符串
+    推荐使用：dao 接口的全限定名称
+-->
+<mapper namespace="com.jcp.dao.UserDao">
+    <select id="selectUser" resultType="User">
+        select id,password,type,name,unit,telephone,can_borrow from book_user order by id asc
+    </select>
+    <select id="selectOneUser" resultType="User" parameterType="java.lang.Integer">
+        select id,password,type,name,unit,telephone,can_borrow from book_user where ID=#{id}
+    </select>
+    <insert id="insertUser">
+        insert into book_user value(#{ID},#{password},#{type},#{name},#{unit},#{telephone},#{can_borrow})
+    </insert>
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+        delete from book_user where ID=#{id}
+    </delete>
+    <update id="updateUser" parameterType="User">
+        update book_user set ID=#{ID},password=#{password},type=#{type},name=#{name},unit=#{unit},telephone=#{telephone},can_borrow=#{can_borrow} where ID=#{ID}
+    </update>
+</mapper>
+<!--(id,password,type,name,unit,telephone,can_borrow)-->
