@@ -10,6 +10,9 @@
     <select id="selectBook" resultType="Book">
         select no,name,author,press,count from book_book order by no asc
     </select>
+    <select id="selectOneBook" resultType="Book" parameterType="java.lang.String">
+        select no,name,author,press,count from book_book where no=#{no}
+    </select>
     <insert id="insertBook">
         insert into book_book value(#{no},#{name},#{author},#{press},#{count})
     </insert>

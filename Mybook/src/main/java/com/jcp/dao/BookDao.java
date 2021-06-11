@@ -9,5 +9,6 @@ public interface BookDao {
     void deleteBook(String no);
     void updateBook(Book book);
     List<Book> selectBook();
+    Book selectOneBook(String no);
 
 }

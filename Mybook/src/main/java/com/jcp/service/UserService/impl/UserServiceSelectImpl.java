@@ -6,8 +6,6 @@ import com.jcp.service.UserService.UserServiceSelect;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import javax.swing.*;
-
 public class UserServiceSelectImpl implements UserServiceSelect {
     @Override
     public String Select(Integer ID) {

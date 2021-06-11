@@ -10,4 +10,5 @@ public interface BookService {
     void removeBook(String no);
     void updateBook(Book book);
     List<Book> queryBook();
+    Book queryOneBook(String no);
 }

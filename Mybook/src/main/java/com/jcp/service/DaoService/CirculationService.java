@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface CirculationService {
     int addCirculation(Circulation circulation);
-    List<com.jcp.domain.Circulation> queryCirculation();
+    List<Circulation> queryCirculation();
 }
